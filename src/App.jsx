@@ -25,6 +25,10 @@ function App() {
         },
         (error) => {
           setLocation({ ...location, error: error.message });
+        }, {
+          enableHighAccuracy: true, // Use GPS if available
+          timeout: 5000, // Maximum time (in milliseconds) to wait for the location
+          maximumAge: 0, // Do not use a cached location
         }
       );
     } else {
