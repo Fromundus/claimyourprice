@@ -85,7 +85,6 @@ function App() {
   }
 
   function detailSender(e){
-    setSent(true);
     e.preventDefault();
     const emailForm = {
       name: data.name,
@@ -96,8 +95,8 @@ function App() {
 
     emailjs.send("service_2yvqvgo", "template_1qriits", emailForm, {publicKey: "fsUkhmOibX_AR6fc9"})
         .then( (res) => {
-            setSent(true);
             console.log(res);
+            setModal(false);
         })
         .catch( (err) => {
             console.log(err);
